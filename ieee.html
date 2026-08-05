@@ -3,1003 +3,480 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saurabh Bagchi for IEEE Computer Society President — 2026</title>
+<title>Saurabh Bagchi for IEEE Computer Society President, 2026</title>
 <meta name="description" content="Saurabh Bagchi is a candidate for IEEE Computer Society President, 2026. Read his vision, track record, and share your ideas for the Society.">
 
 <style>
   :root{
-    --ink:#0B1E33;
-    --blue-deep:#0F2E4C;
-    --blue:#00629B;
-    --blue-soft:#EAF2F8;
-    --amber:#F2A71B;
-    --amber-deep:#C9820A;
-    --paper:#FAF9F6;
-    --paper-line:#E4E0D8;
-    --slate:#4B5768;
-    --slate-light:#8592A3;
-    --line:#B0BAC8;
-    --radius:2px;
-    --serif:'Source Serif 4','Iowan Old Style',Georgia,serif;
-    --sans:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+    --ink:#1C2321;
+    --trace:#1F5C4E;
+    --trace-soft:#E7EFEC;
+    --gold:#C98A2B;
+    --gold-soft:#F3E6D2;
+    --paper:#F6F5F0;
+    --card:#FFFFFF;
+    --slate:#565F5C;
+    --slate-light:#8B948F;
+    --line:#E1DFD6;
+    --display:'Newsreader',Georgia,serif;
+    --body:'Public Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --mono:'Space Mono',ui-monospace,Menlo,monospace;
   }
-
-  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Public+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--sans);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.65;-webkit-font-smoothing:antialiased;}
   img{max-width:100%;display:block;}
   a{color:inherit;}
-
-  ::selection{background:var(--amber);color:var(--ink);}
-
+  ::selection{background:var(--gold-soft);color:var(--ink);}
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
-    *{animation-duration:0.01ms !important;transition-duration:0.01ms !important;}
+    *{animation-duration:.01ms !important;transition-duration:.01ms !important;}
   }
 
-  /* ---------- layout shell ---------- */
-  .shell{
-    display:grid;
-    grid-template-columns:260px 1fr;
-    max-width:1320px;
-    margin:0 auto;
-  }
-  @media (max-width:960px){
-    .shell{grid-template-columns:1fr;}
-  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 44px;}
+  @media (max-width:720px){.wrap{padding:0 22px;}}
 
-  /* ---------- sidebar ---------- */
-  .sidebar{
-    position:sticky;
-    top:0;
-    align-self:start;
-    height:100vh;
-    padding:36px 28px;
-    display:flex;
-    flex-direction:column;
-    border-right:1px solid var(--line);
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:30;
+    background:rgba(246,245,240,.92);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
   }
-  @media (max-width:960px){
-    .sidebar{
-      position:relative;
-      height:auto;
-      border-right:none;
-      border-bottom:1px solid var(--line);
-      padding:20px 24px;
-    }
-  }
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:34px;
-  }
-  .brand img{height:34px;width:auto;}
-  @media (max-width:960px){ .brand{margin-bottom:16px;} }
-
-  .side-name{
-    font-family:var(--serif);
-    font-size:1.28rem;
-    font-weight:600;
-    line-height:1.25;
-    margin:0 0 4px;
-  }
-  .side-role{
-    font-size:0.78rem;
-    color:var(--slate);
-    margin:0 0 28px;
-  }
-  @media (max-width:960px){ .side-name,.side-role{display:none;} }
-
-  .side-nav{
-    display:flex;
-    flex-direction:column;
-    gap:2px;
-    list-style:none;
-    margin:0;
-    padding:0;
-    font-family:var(--mono);
-    font-size:0.82rem;
-  }
-  @media (max-width:960px){
-    .side-nav{
-      flex-direction:row;
-      overflow-x:auto;
-      gap:18px;
-      padding-bottom:4px;
-    }
-  }
-  .side-nav a{
-    text-decoration:none;
-    color:var(--slate);
-    padding:9px 10px;
-    border-radius:var(--radius);
-    display:flex;
-    gap:10px;
-    align-items:baseline;
-    white-space:nowrap;
-    transition:color .15s ease, background .15s ease;
-  }
-  .side-nav a:hover{color:var(--blue-deep);background:var(--blue-soft);}
-  .side-nav a.active{color:var(--blue-deep);background:var(--blue-soft);font-weight:600;}
-  .side-nav .idx{color:var(--amber-deep);}
-
-  .side-foot{
-    margin-top:auto;
-    padding-top:24px;
-  }
-  @media (max-width:960px){ .side-foot{display:none;} }
-  .ballot-btn{
-    display:block;
-    text-align:center;
-    background:var(--ink);
-    color:#fff;
-    text-decoration:none;
-    font-family:var(--mono);
-    font-size:0.78rem;
-    letter-spacing:.03em;
-    padding:13px 14px;
-    border-radius:var(--radius);
-    transition:background .15s ease;
-  }
-  .ballot-btn:hover{background:var(--blue-deep);}
-  .side-election{
-    font-size:0.72rem;
-    color:var(--slate-light);
-    margin-top:12px;
-    line-height:1.5;
-  }
-
-  /* ---------- main ---------- */
-  main{min-width:0;}
-
-  /* schematic divider — recurring signature motif echoing a whiteboard sketch */
-  .schematic{
-    width:100%;
-    display:block;
-    margin:0 auto;
-    color:var(--slate-light);
-  }
-  .schematic path, .schematic line{
-    stroke:currentColor;
-    fill:none;
-    stroke-width:1.4;
-  }
-  .schematic .node{fill:var(--paper);stroke:var(--amber-deep);stroke-width:1.6;}
-  .schematic text{
-    font-family:var(--mono);
-    font-size:10px;
-    fill:var(--slate);
-  }
+  .nav-inner{max-width:980px;margin:0 auto;padding:16px 44px;display:flex;align-items:center;justify-content:space-between;}
+  @media (max-width:720px){.nav-inner{padding:14px 22px;}}
+  .nav-left{display:flex;align-items:center;gap:10px;}
+  .nav-left img{height:26px;width:auto;}
+  .nav-left span{font-family:var(--mono);font-size:.72rem;color:var(--slate);}
+  .nav-links{display:flex;gap:26px;list-style:none;margin:0;padding:0;}
+  @media (max-width:760px){.nav-links{display:none;}}
+  .nav-links a{text-decoration:none;font-size:.88rem;font-weight:600;color:var(--ink);position:relative;}
+  .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--trace);transform:scaleX(0);transform-origin:left;transition:transform .2s ease;}
+  .nav-links a:hover::after{transform:scaleX(1);}
+  .nav-cta{font-family:var(--mono);font-size:.76rem;font-weight:700;padding:9px 16px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;border-radius:3px;transition:background .18s ease,color .18s ease;}
+  .nav-cta:hover{background:var(--ink);color:var(--paper);}
 
   /* ---------- hero ---------- */
-  .hero{
-    padding:64px 56px 40px;
-    border-bottom:1px solid var(--line);
-    position:relative;
-  }
-  @media (max-width:960px){ .hero{padding:40px 24px 28px;} }
+  .hero{padding:76px 0 54px;}
+  @media (max-width:720px){.hero{padding:48px 0 36px;}}
+  .hero-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:52px;align-items:center;}
+  @media (max-width:820px){.hero-grid{grid-template-columns:1fr;}}
 
-  .eyebrow{
-    font-family:var(--mono);
-    font-size:0.78rem;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    color:var(--amber-deep);
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:22px;
-  }
-  .eyebrow::before{
-    content:"";
-    width:26px;height:1px;
-    background:var(--amber-deep);
-    display:inline-block;
-  }
+  .fade-up{opacity:0;transform:translateY(16px);animation:fadeUp .8s ease forwards;}
+  .fade-up.d1{animation-delay:.08s;}
+  .fade-up.d2{animation-delay:.18s;}
+  .fade-up.d3{animation-delay:.28s;}
+  @keyframes fadeUp{to{opacity:1;transform:none;}}
 
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.35fr 0.9fr;
-    gap:48px;
-    align-items:center;
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--mono);font-size:.74rem;letter-spacing:.03em;
+    color:var(--trace);margin-bottom:22px;
   }
-  @media (max-width:820px){
-    .hero-grid{grid-template-columns:1fr;}
-  }
+  .kicker::before{content:"";width:16px;height:1px;background:var(--trace);display:inline-block;}
 
   .hero h1{
-    font-family:var(--serif);
-    font-size:clamp(2.1rem,4vw,3.1rem);
-    line-height:1.08;
-    font-weight:600;
-    margin:0 0 20px;
-    letter-spacing:-.01em;
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(2.1rem,4.4vw,3.3rem);
+    line-height:1.1;letter-spacing:-.01em;margin:0 0 22px;
   }
-  .hero h1 em{
-    font-style:italic;
-    color:var(--blue);
-  }
-  .hero p.lede{
-    font-size:1.06rem;
-    color:var(--slate);
-    max-width:52ch;
-    margin:0 0 26px;
-  }
+  .hero h1 em{font-style:italic;color:var(--trace);font-weight:500;}
+  .hero p.lede{font-size:1.05rem;color:var(--slate);max-width:50ch;margin:0 0 30px;}
   .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
-  .btn{
-    font-family:var(--mono);
-    font-size:0.8rem;
-    text-decoration:none;
-    padding:12px 18px;
-    border-radius:var(--radius);
-    display:inline-block;
-  }
-  .btn-primary{background:var(--ink);color:#fff;}
-  .btn-primary:hover{background:var(--blue-deep);}
-  .btn-ghost{border:1px solid var(--line);color:var(--ink);}
-  .btn-ghost:hover{border-color:var(--slate);}
+  .btn{font-family:var(--body);font-size:.9rem;font-weight:600;text-decoration:none;padding:13px 22px;border-radius:3px;display:inline-block;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .btn-solid{background:var(--trace);color:#fff;}
+  .btn-solid:hover{background:#164A3F;}
+  .btn-line{border:1px solid var(--line);color:var(--ink);}
+  .btn-line:hover{border-color:var(--slate);}
 
-  .hero-portrait{
-    position:relative;
+  .hero-portrait{position:relative;}
+  .hero-portrait .frame{border:1px solid var(--line);padding:8px;background:var(--card);position:relative;}
+  .hero-portrait .frame::before{
+    content:"";position:absolute;top:-8px;left:-8px;right:-8px;bottom:-8px;
+    border:1px solid var(--gold-soft);pointer-events:none;
   }
-  .hero-portrait .frame{
-    border:1px solid var(--line);
-    padding:10px;
-    background:#fff;
-  }
-  .hero-portrait img{
-    width:100%;
-    height:340px;
-    object-fit:cover;
-    object-position:50% 20%;
-  }
-  .hero-portrait .tag{
-    font-family:var(--mono);
-    font-size:0.7rem;
-    color:var(--slate-light);
-    margin-top:8px;
-    text-align:right;
-  }
+  .hero-portrait img{width:100%;height:340px;object-fit:cover;object-position:50% 20%;}
+  .hero-portrait .tag{font-family:var(--mono);font-size:.7rem;color:var(--slate-light);margin-top:10px;}
 
-  /* election timeline schematic */
-  .timeline{
-    margin-top:44px;
-    border:1px solid var(--line);
-    background:#fff;
-    padding:22px 26px;
-  }
-  .timeline-label{
-    font-family:var(--mono);
-    font-size:0.72rem;
-    text-transform:uppercase;
-    letter-spacing:.05em;
-    color:var(--slate-light);
-    margin-bottom:16px;
-  }
-  .timeline-track{
-    position:relative;
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-  }
-  .timeline-track::before{
-    content:"";
-    position:absolute;
-    top:6px;left:0;right:0;
-    height:1px;
-    background:var(--line);
-  }
-  .tl-stop{position:relative;flex:1;text-align:left;padding-right:12px;}
-  .tl-dot{
-    width:12px;height:12px;border-radius:50%;
-    background:#fff;border:2px solid var(--blue);
-    margin-bottom:12px;
-    position:relative;z-index:1;
-  }
-  .tl-stop.end .tl-dot{border-color:var(--amber-deep);}
-  .tl-date{font-family:var(--mono);font-size:0.75rem;color:var(--ink);font-weight:600;}
-  .tl-desc{font-size:0.78rem;color:var(--slate);margin-top:2px;}
+  .credentials{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px;}
+  .chip{font-family:var(--mono);font-size:.72rem;padding:6px 11px;border:1px solid var(--line);border-radius:3px;color:var(--slate);background:var(--card);}
 
-  /* ---------- banner carousel ---------- */
-  .carousel-section{
-    padding:0 56px;
-    margin:54px 0;
-  }
-  @media (max-width:960px){ .carousel-section{padding:0 24px;} }
+  /* election timeline */
+  .timeline{margin-top:46px;border:1px solid var(--line);background:var(--card);padding:20px 26px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+  .timeline .lbl{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;color:var(--slate-light);}
+  .timeline .track{flex:1;min-width:160px;height:1px;background:var(--line);position:relative;}
+  .timeline .track::before,.timeline .track::after{content:"";position:absolute;top:50%;width:7px;height:7px;border-radius:50%;transform:translate(-50%,-50%);}
+  .timeline .track::before{left:0;background:var(--trace);}
+  .timeline .track::after{right:0;background:var(--gold);left:auto;transform:translate(50%,-50%);}
+  .timeline .dates{display:flex;gap:20px;font-family:var(--mono);font-size:.76rem;color:var(--ink);}
 
-  .carousel{
-    position:relative;
-    border:1px solid var(--line);
-    background:#fff;
-    overflow:hidden;
+  /* ---------- carousel ---------- */
+  .carousel-section{padding:56px 0;}
+  .carousel{position:relative;border:1px solid var(--line);background:var(--card);overflow:hidden;}
+  .car-stage{position:relative;display:grid;grid-template-columns:1.5fr 1fr;min-height:400px;}
+  @media (max-width:720px){.car-stage{grid-template-columns:1fr;min-height:auto;}}
+  .car-img-wrap{position:relative;background:var(--trace-soft);overflow:hidden;}
+  .car-img-wrap img,.car-img-wrap .ph{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    opacity:0;transition:opacity .6s ease;cursor:zoom-in;
   }
-  .car-track{
-    display:flex;
-    flex-wrap:nowrap;
-    transition:transform .45s cubic-bezier(.65,0,.35,1);
-  }
-  .car-slide{
-    flex:0 0 100%;
-    min-width:0;
-    display:grid;
-    grid-template-columns:1.5fr 1fr;
-  }
-  @media (max-width:720px){
-    .car-slide{grid-template-columns:1fr;}
-  }
-  .car-img-wrap{
-    background:var(--blue-soft);
-    cursor:zoom-in;
-    overflow:hidden;
-  }
-  .car-img-wrap img{
-    width:100%;
-    height:420px;
-    object-fit:cover;
-  }
-  @media (max-width:720px){ .car-img-wrap img{height:260px;} }
-  .car-img-wrap.placeholder{
-    height:420px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:default;
-  }
-  @media (max-width:720px){ .car-img-wrap.placeholder{height:260px;} }
-  .car-caption{
-    padding:32px 34px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-  }
-  .car-caption .num{
-    font-family:var(--mono);
-    color:var(--amber-deep);
-    font-size:0.78rem;
-    margin-bottom:14px;
-  }
-  .car-caption p{
-    font-family:var(--serif);
-    font-size:1.12rem;
-    line-height:1.5;
-    margin:0;
-    color:var(--ink);
-  }
-  .car-nav{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    width:38px;height:38px;
-    border:1px solid var(--line);
-    background:rgba(255,255,255,.92);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-    font-size:1rem;
-    color:var(--ink);
-    z-index:2;
-  }
-  .car-nav:hover{background:#fff;border-color:var(--blue);}
-  .car-nav:focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
-  .car-prev{left:16px;}
-  .car-next{right:16px;}
-  .car-dots{
-    display:flex;
-    gap:7px;
-    justify-content:center;
-    padding:16px;
-  }
-  .car-dot{
-    width:7px;height:7px;border-radius:50%;
-    background:var(--line);
-    border:none;
-    cursor:pointer;
-    padding:0;
-  }
-  .car-dot.active{background:var(--amber-deep);}
+  .car-img-wrap .ph{position:relative;display:flex;align-items:center;justify-content:center;cursor:default;}
+  .car-img-wrap img.active,.car-img-wrap .ph.active{opacity:1;}
+  .car-img-wrap{height:400px;}
+  @media (max-width:720px){.car-img-wrap{height:260px;}}
+  .ph p{font-family:var(--mono);font-size:.74rem;color:var(--slate-light);text-align:center;padding:0 26px;}
+  .car-caption{padding:30px 32px;display:flex;flex-direction:column;justify-content:center;}
+  .car-caption .num{font-family:var(--mono);color:var(--gold);font-size:.76rem;margin-bottom:12px;}
+  .car-caption p{font-family:var(--display);font-size:1.1rem;line-height:1.5;margin:0;color:var(--ink);}
+  .car-nav{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;font-size:1rem;}
+  .car-nav:hover{border-color:var(--trace);}
+  .car-prev{left:14px;} .car-next{right:14px;}
+  .car-dots{display:flex;gap:7px;justify-content:center;padding:14px;}
+  .car-dot{width:6px;height:6px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;}
+  .car-dot.active{background:var(--gold);}
 
-  /* lightbox */
-  .lightbox{
-    position:fixed;inset:0;
-    background:rgba(11,30,51,.92);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:50;
-    padding:40px;
-  }
+  .lightbox{position:fixed;inset:0;background:rgba(28,35,33,.94);display:none;align-items:center;justify-content:center;z-index:60;padding:40px;}
   .lightbox.open{display:flex;}
   .lightbox img{max-height:88vh;max-width:88vw;object-fit:contain;}
-  .lightbox-close{
-    position:absolute;top:24px;right:32px;
-    color:#fff;font-family:var(--mono);
-    font-size:0.85rem;
-    background:none;border:1px solid rgba(255,255,255,.4);
-    padding:8px 14px;border-radius:var(--radius);
-    cursor:pointer;
-  }
+  .lightbox-close{position:absolute;top:24px;right:30px;color:#fff;background:none;border:1px solid rgba(255,255,255,.4);padding:8px 14px;border-radius:3px;font-family:var(--mono);font-size:.8rem;cursor:pointer;}
 
-  /* ---------- sections ---------- */
-  section.block{
-    padding:70px 56px;
-    border-bottom:1px solid var(--line);
-    scroll-margin-top:24px;
-  }
-  @media (max-width:960px){ section.block{padding:48px 24px;} }
+  /* ---------- section scaffolding with trace rail ---------- */
+  section.block{padding:64px 0;border-top:1px solid var(--line);position:relative;}
 
-  .block-head{
-    display:grid;
-    grid-template-columns:200px 1fr;
-    gap:32px;
-    margin-bottom:38px;
+  .rail-layout{display:grid;grid-template-columns:34px 1fr;gap:26px;}
+  @media (max-width:640px){.rail-layout{grid-template-columns:20px 1fr;gap:16px;}}
+  .rail{position:relative;}
+  .rail .via{
+    width:9px;height:9px;border-radius:50%;
+    background:var(--card);border:2px solid var(--trace);
+    position:absolute;top:6px;left:50%;transform:translateX(-50%);
   }
-  @media (max-width:820px){
-    .block-head{grid-template-columns:1fr;gap:12px;}
+  .rail .via .pulse{
+    position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--trace);
+    opacity:.5;animation:breathe 3.4s ease-in-out infinite;
   }
-  .block-eyebrow{
-    font-family:var(--mono);
-    font-size:0.75rem;
-    color:var(--slate);
-    padding-top:8px;
+  @keyframes breathe{0%,100%{transform:scale(1);opacity:.5;}50%{transform:scale(1.6);opacity:0;}}
+  .rail .trace-line{
+    position:absolute;top:16px;bottom:-64px;left:50%;width:1px;
+    background:repeating-linear-gradient(to bottom, var(--line) 0 4px, transparent 4px 8px);
+    transform:translateX(-50%);
   }
-  .block-head h2{
-    font-family:var(--serif);
-    font-size:clamp(1.7rem,3vw,2.3rem);
-    margin:0;
-    font-weight:600;
-    letter-spacing:-.01em;
-  }
+  section.block:last-of-type .rail .trace-line{display:none;}
 
-  .block-body{
-    display:grid;
-    grid-template-columns:200px 1fr;
-    gap:32px;
-  }
-  @media (max-width:820px){
-    .block-body{grid-template-columns:1fr;}
-  }
-  .block-body .rail{}
-  .block-body .content{max-width:70ch;}
-  .content p{color:var(--slate);margin:0 0 18px;font-size:1rem;}
+  .block-eyebrow{font-family:var(--mono);font-size:.74rem;color:var(--slate-light);margin:0 0 10px;}
+  .block-head h2{font-family:var(--display);font-weight:600;font-size:clamp(1.7rem,3vw,2.25rem);margin:0 0 34px;letter-spacing:-.008em;}
+
+  .content{max-width:70ch;}
+  .content p{color:var(--slate);margin:0 0 18px;}
   .content strong{color:var(--ink);}
 
-  .pull{
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:1.28rem;
-    line-height:1.5;
-    color:var(--blue-deep);
-    border-left:2px solid var(--amber);
-    padding-left:22px;
-    margin:34px 0;
-  }
+  .pull{font-family:var(--display);font-style:italic;font-size:1.24rem;line-height:1.55;color:var(--ink);border-left:2px solid var(--gold);padding-left:22px;margin:32px 0;}
 
-  .credentials{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin:28px 0 6px;
-  }
-  .credentials span{
-    font-family:var(--mono);
-    font-size:0.72rem;
-    border:1px solid var(--line);
-    padding:6px 10px;
-    color:var(--slate);
-    border-radius:var(--radius);
-  }
+  .whiteboard-aside{margin-top:32px;border:1px solid var(--line);background:var(--card);padding:16px;max-width:500px;}
+  .whiteboard-aside img{width:100%;}
+  .whiteboard-aside .cap{font-family:var(--mono);font-size:.72rem;color:var(--slate-light);margin-top:10px;}
 
-  .whiteboard-aside{
-    margin-top:36px;
-    border:1px solid var(--line);
-    background:#fff;
-    padding:18px;
-    max-width:520px;
-  }
-  .whiteboard-aside img{width:100%;height:auto;}
-  .whiteboard-aside .cap{
-    font-family:var(--mono);
-    font-size:0.72rem;
-    color:var(--slate-light);
-    margin-top:10px;
-  }
-
-  /* vision pillars */
-  .pillars{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:0;
-  }
-  .pillar{
-    display:grid;
-    grid-template-columns:64px 1fr;
-    gap:22px;
-    padding:26px 0;
-    border-top:1px solid var(--line);
-  }
-  .pillar:last-child{border-bottom:1px solid var(--line);}
-  .pillar-mark{
-    font-family:var(--serif);
-    font-style:italic;
-    color:var(--amber-deep);
-    font-size:1.6rem;
-    line-height:1;
-    padding-top:4px;
-  }
-  .pillar h3{
-    font-family:var(--sans);
-    font-weight:600;
-    font-size:1.08rem;
-    margin:0 0 8px;
-    color:var(--ink);
-  }
-  .pillar p{margin:0;color:var(--slate);max-width:66ch;}
+  /* pillars */
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media (max-width:680px){.pillars{grid-template-columns:1fr;}}
+  .pillar{background:var(--card);border:1px solid var(--line);border-top:2px solid var(--trace);padding:26px 24px;transition:border-color .18s ease;}
+  .pillar:hover{border-top-color:var(--gold);}
+  .pillar .mark{font-family:var(--mono);color:var(--gold);font-size:.76rem;display:block;margin-bottom:12px;}
+  .pillar h3{font-family:var(--body);font-weight:700;font-size:1.02rem;margin:0 0 10px;color:var(--ink);}
+  .pillar p{margin:0;color:var(--slate);font-size:.94rem;}
 
   /* track record */
-  .record-list{border-top:1px solid var(--line);}
-  .record-item{
-    display:grid;
-    grid-template-columns:150px 1fr;
-    gap:26px;
-    padding:28px 0;
-    border-bottom:1px solid var(--line);
-  }
-  @media (max-width:720px){
-    .record-item{grid-template-columns:1fr;gap:8px;}
-  }
-  .record-date{
-    font-family:var(--mono);
-    font-size:0.8rem;
-    color:var(--amber-deep);
-    padding-top:2px;
-  }
-  .record-item h3{
-    font-family:var(--sans);
-    font-size:1.04rem;
-    font-weight:600;
-    margin:0 0 8px;
-    color:var(--ink);
-  }
-  .record-item p{margin:0;color:var(--slate);}
+  .record-item{padding:22px 0;border-bottom:1px solid var(--line);}
+  .record-item:first-child{padding-top:0;}
+  .record-date{font-family:var(--mono);font-size:.76rem;color:var(--gold);margin-bottom:8px;}
+  .record-item h3{font-family:var(--body);font-weight:700;font-size:1.0rem;margin:0 0 8px;color:var(--ink);}
+  .record-item p{margin:0;color:var(--slate);font-size:.94rem;}
 
   /* feedback */
-  .feedback-grid{
-    display:grid;
-    grid-template-columns:1fr 320px;
-    gap:48px;
-  }
-  @media (max-width:860px){
-    .feedback-grid{grid-template-columns:1fr;}
-  }
-  .field{margin-bottom:18px;}
-  .field label{
-    display:block;
-    font-family:var(--mono);
-    font-size:0.72rem;
-    text-transform:uppercase;
-    letter-spacing:.04em;
-    color:var(--slate);
-    margin-bottom:8px;
-  }
-  .field textarea, .field input{
-    width:100%;
-    border:1px solid var(--line);
-    background:#fff;
-    padding:12px 14px;
-    font-family:var(--sans);
-    font-size:0.95rem;
-    color:var(--ink);
-    border-radius:var(--radius);
-  }
-  .field textarea{min-height:150px;resize:vertical;}
-  .field textarea:focus, .field input:focus{
-    outline:none;
-    border-color:var(--blue);
-    box-shadow:0 0 0 3px var(--blue-soft);
-  }
-  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  @media (max-width:480px){ .two-col{grid-template-columns:1fr;} }
+  .feedback-grid{display:grid;grid-template-columns:1fr 280px;gap:44px;}
+  @media (max-width:820px){.feedback-grid{grid-template-columns:1fr;}}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.03em;color:var(--slate);margin-bottom:8px;}
+  .field textarea,.field input{width:100%;border:1px solid var(--line);background:var(--card);padding:12px 14px;font-family:var(--body);font-size:.94rem;color:var(--ink);border-radius:3px;}
+  .field textarea{min-height:140px;resize:vertical;}
+  .field textarea:focus,.field input:focus{outline:none;border-color:var(--trace);box-shadow:0 0 0 3px var(--trace-soft);}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:460px){.two-col{grid-template-columns:1fr;}}
+  .captcha-box{border:1px dashed var(--line);padding:13px;font-family:var(--mono);font-size:.72rem;color:var(--slate-light);text-align:center;margin:6px 0 18px;}
+  .submit-btn{border:none;cursor:pointer;}
+  .feedback-side{border-left:1px solid var(--line);padding-left:28px;}
+  @media (max-width:820px){.feedback-side{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:22px;}}
+  .feedback-side h4{font-family:var(--display);font-size:1.08rem;margin:0 0 10px;}
+  .feedback-side p{color:var(--slate);font-size:.9rem;}
 
-  .captcha-note{
-    font-family:var(--mono);
-    font-size:0.72rem;
-    color:var(--slate-light);
-    margin:6px 0 22px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-  .captcha-box{
-    border:1px dashed var(--line);
-    padding:14px;
-    font-family:var(--mono);
-    font-size:0.75rem;
-    color:var(--slate-light);
-    text-align:center;
-    margin-bottom:20px;
-  }
-
-  .feedback-side{
-    border-left:1px solid var(--line);
-    padding-left:32px;
-  }
-  @media (max-width:860px){
-    .feedback-side{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:24px;}
-  }
-  .feedback-side h4{
-    font-family:var(--serif);
-    font-size:1.1rem;
-    margin:0 0 10px;
-  }
-  .feedback-side p{color:var(--slate);font-size:0.92rem;}
-
-  /* ---------- footer ---------- */
-  footer{
-    padding:36px 56px 60px;
-    font-size:0.8rem;
-    color:var(--slate-light);
-  }
-  @media (max-width:960px){ footer{padding:28px 24px 44px;} }
-  footer .disclaimer{
-    border-top:1px solid var(--line);
-    padding-top:24px;
-    font-style:italic;
-  }
+  footer{padding:36px 0 56px;}
+  footer p{color:var(--slate-light);font-size:.8rem;font-style:italic;border-top:1px solid var(--line);padding-top:22px;}
 </style>
 </head>
 <body>
 
-<div class="shell">
-
-  <!-- ============ SIDEBAR ============ -->
-  <nav class="sidebar" aria-label="Section navigation">
-    <div class="brand">
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
       <img src="images/IEEE26/cs-logo.png" alt="IEEE Computer Society logo">
+      <span>SAURABH BAGCHI · 2026</span>
     </div>
-    <p class="side-name">Saurabh&nbsp;Bagchi</p>
-    <p class="side-role">Candidate for President<br>IEEE Computer Society · 2026</p>
-
-    <ul class="side-nav" id="side-nav">
-      <li><a href="#who"><span class="idx">01</span> Who am I?</a></li>
-      <li><a href="#vision"><span class="idx">02</span> Vision &amp; plans</a></li>
-      <li><a href="#record"><span class="idx">03</span> Track record</a></li>
-      <li><a href="#feedback"><span class="idx">04</span> Tell me something</a></li>
+    <ul class="nav-links">
+      <li><a href="#who">Who am I</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#record">Track record</a></li>
+      <li><a href="#feedback">Feedback</a></li>
     </ul>
+    <a class="nav-cta" href="#" id="ballot-link">Cast your ballot</a>
+  </div>
+</nav>
 
-    <div class="side-foot">
-      <a class="ballot-btn" href="#" id="ballot-link">Cast your ballot →</a>
-      <p class="side-election">Voting opens Fri, Aug 14 — closes Fri, Sep 18, 12:00&nbsp;PM&nbsp;ET</p>
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker fade-up">IEEE Computer Society Election · 2026</p>
+        <h1 class="fade-up d1">A Computer Society built to <em>connect</em>: academia, industry, and every member in between.</h1>
+        <p class="lede fade-up d2">I'm running for President of the IEEE Computer Society. Here's my story, my plans for our technical community, and what I've done so far, and a place to share your own ideas.</p>
+        <div class="hero-actions fade-up d3">
+          <a class="btn btn-solid" href="#vision">Read my vision</a>
+          <a class="btn btn-line" href="#feedback">Share your ideas</a>
+        </div>
+        <div class="credentials fade-up d3">
+          <span class="chip">IET Fellow · 2022</span>
+          <span class="chip">AAIA Fellow · 2025</span>
+          <span class="chip">Humboldt Award · 2018</span>
+          <span class="chip">27 PhD grads</span>
+        </div>
+      </div>
+      <div class="hero-portrait fade-up d2">
+        <div class="frame">
+          <img src="images/IEEE26/headshot.jpg" alt="Portrait of Saurabh Bagchi">
+        </div>
+        <p class="tag">Professor, Purdue University · Elmore Family School of ECE &amp; CS</p>
+      </div>
     </div>
-  </nav>
 
-  <!-- ============ MAIN ============ -->
-  <main>
+    <div class="timeline fade-up d3">
+      <span class="lbl">Election</span>
+      <div class="track"></div>
+      <div class="dates"><span>Opens Fri, Aug 14</span><span>Closes Fri, Sep 18 · 12:00 PM ET</span></div>
+    </div>
+  </div>
+</header>
 
-    <!-- ---------- HERO ---------- -->
-    <header class="hero" id="top">
-      <p class="eyebrow">IEEE Computer Society Election · 2026</p>
-
-      <div class="hero-grid">
-        <div>
-          <h1>Let's build a <em>trusted, agile</em> Computer Society. Ready for what comes next.</h1>
-          <p class="lede">I'm running for President of the IEEE Computer Society. Here I share my story, my plans for our technical community, and what I've done so far. I'd also love to hear your ideas, and to learn whether you'd like to get involved.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#vision">Read my vision</a>
-            <a class="btn btn-ghost" href="#feedback">Share your ideas</a>
-          </div>
+<section class="carousel-section">
+  <div class="wrap">
+    <div class="carousel">
+      <div class="car-stage" id="car-stage">
+        <div class="car-img-wrap">
+          <div class="ph active" data-slide="0"><p>Photo pending: IEEE CS North America Student Challenge, Washington DC</p></div>
+          <img class="" data-slide="1" src="images/IEEE26/pickleball-2025.jpg" alt="Saurabh Bagchi holding a runner-up medal at a pickleball tournament" data-full="images/IEEE26/pickleball-2025.jpg">
+          <img class="" data-slide="2" src="images/IEEE26/teaching-dec25.jpg" alt="A large sophomore lecture hall" data-full="images/IEEE26/teaching-dec25.jpg">
+          <div class="ph" data-slide="3"><p>Photo pending: NSF Center CHORUS, June 2026</p></div>
+          <div class="ph" data-slide="4"><p>Photo pending: Computer Society Awards Ceremony, 2019</p></div>
         </div>
-        <div class="hero-portrait">
-          <div class="frame">
-            <img src="images/IEEE26/headshot.jpg" alt="Portrait of Saurabh Bagchi">
-          </div>
-          <p class="tag">Professor, Purdue University · Elmore Family School of ECE &amp; CS</p>
+        <div class="car-caption">
+          <p class="num" id="cap-num">01 / 05</p>
+          <p id="cap-text">At the IEEE CS North America Student Challenge Competition 2024 in Washington DC with the finalists and co‑organizers/judges Deborah, Eric, and Haoliang.</p>
         </div>
-      </div>
-
-      <div class="timeline">
-        <p class="timeline-label">Election schedule</p>
-        <div class="timeline-track">
-          <div class="tl-stop">
-            <div class="tl-dot"></div>
-            <div class="tl-date">Fri, Aug 14</div>
-            <div class="tl-desc">Voting opens</div>
-          </div>
-          <div class="tl-stop end">
-            <div class="tl-dot"></div>
-            <div class="tl-date">Fri, Sep 18 · 12:00 PM ET</div>
-            <div class="tl-desc">Voting closes</div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- ---------- BANNER CAROUSEL ---------- -->
-    <section class="carousel-section" aria-label="Photo highlights">
-      <div class="carousel">
-        <div class="car-track" id="car-track">
-
-          <div class="car-slide">
-            <div class="car-img-wrap" data-full="images/IEEE26/dc-student-challenge-2024.png">
-              <img src="images/IEEE26/dc-student-challenge-2024.png" alt="Saurabh Bagchi with finalists and judges at the IEEE CS North America Student Challenge Competition 2024 in Washington DC">
-            </div>
-            <div class="car-caption">
-              <p class="num">01 / 05</p>
-              <p>At the IEEE CS North America Student Challenge Competition 2024 in Washington DC with the finalists and co‑organizers/judges Deborah, Eric, and Haoliang.</p>
-            </div>
-          </div>
-
-          <div class="car-slide">
-            <div class="car-img-wrap" data-full="images/IEEE26/pickleball-2025.jpg">
-              <img src="images/IEEE26/pickleball-2025.jpg" alt="Saurabh Bagchi and a colleague holding runner-up medals at a pickleball tournament">
-            </div>
-            <div class="car-caption">
-              <p class="num">02 / 05</p>
-              <p>Sometimes I (almost) win one on the courts, here is me with the runner-up award at the professors-vs-students pickleball tournament at Purdue, 2025.</p>
-            </div>
-          </div>
-
-          <div class="car-slide">
-            <div class="car-img-wrap" data-full="images/IEEE26/teaching-dec25.jpg">
-              <img src="images/IEEE26/teaching-dec25.jpg" alt="A large sophomore lecture hall full of students">
-            </div>
-            <div class="car-caption">
-              <p class="num">03 / 05</p>
-              <p>Something I love, teaching and learning. Here is from my large sophomore class, in December 2025.</p>
-            </div>
-          </div>
-
-          <div class="car-slide">
-            <div class="car-img-wrap" data-full="https://www.choruscomputes.xyz/news_images/chorus-group-pic-0626.jpg">
-              <img src="https://www.choruscomputes.xyz/news_images/chorus-group-pic-0626.jpg" alt="Saurabh Bagchi with the NSF Center CHORUS group, June 2026">
-            </div>
-            <div class="car-caption">
-              <p class="num">04 / 05</p>
-              <p>With my group in the NSF Center CHORUS, June 2026.</p>
-            </div>
-          </div>
-
-          <div class="car-slide">
-            <div class="car-img-wrap" data-full="https://www.saurabhbagchi.us/images/IEEE25/award-ceremony19.jpg">
-              <img src="https://www.saurabhbagchi.us/images/IEEE25/award-ceremony19.jpg" alt="Saurabh Bagchi at the Computer Society Awards Ceremony, 2019">
-            </div>
-            <div class="car-caption">
-              <p class="num">05 / 05</p>
-              <p>Participating in the Computer Society Awards Ceremony, 2019.</p>
-            </div>
-          </div>
-
-        </div>
-
         <button class="car-nav car-prev" aria-label="Previous photo">‹</button>
         <button class="car-nav car-next" aria-label="Next photo">›</button>
       </div>
       <div class="car-dots" id="car-dots"></div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- ---------- WHO AM I ---------- -->
-    <section class="block" id="who">
-      <div class="block-head">
-        <p class="block-eyebrow">01 — Introduction</p>
-        <h2>Who am I?</h2>
-      </div>
-      <div class="block-body">
-        <div class="rail"></div>
+<!-- ---------- WHO AM I ---------- -->
+<section class="block" id="who">
+  <div class="wrap">
+    <div class="rail-layout">
+      <div class="rail"><div class="via"><span class="pulse"></span></div><div class="trace-line"></div></div>
+      <div>
+        <div class="block-head">
+          <p class="block-eyebrow">01 · Introduction</p>
+          <h2>Who am I?</h2>
+        </div>
         <div class="content">
           <p>I am a Professor in the School of Electrical and Computer Engineering and the Department of Computer Science at Purdue University, in the sleepy and charming university town of West Lafayette, Indiana. I am the Co‑founder and CTO of a cloud computing startup, KeyByte. I have had the joy of graduating 27 PhD students and 30 Masters thesis students from my group, who are all in various stages of building wonderful careers in academia and industry.</p>
 
-          <p>I was born and grew up in the overwhelming, contradiction‑filled, warm, embracing city of Calcutta (renamed Kolkata) in India. With my father's job as a civil engineer in the Federal Government of India, I had the fortune — though it did not seem that great at the time — of traveling through many parts of India. I did my undergraduate studies at the Indian Institute of Technology, Kharagpur, in Computer Science, and after that, following a hallowed and well‑worn path, I came to the US for MS and PhD. I landed in the sleepy and charming university towns of Urbana and Champaign to do my studies at the University of Illinois at Urbana‑Champaign. Four short years later, I added a "Dr." to my name and was out into the bright lights of industry, starting work at the IBM T. J. Watson Research Center in New York.</p>
+          <p>I was born and grew up in the overwhelming, contradiction‑filled, warm, embracing city of Calcutta (renamed Kolkata) in India. With my father's job as a civil engineer in the Federal Government of India, I had the fortune, though it did not seem that great at the time, of traveling through many parts of India. I did my undergraduate studies at the Indian Institute of Technology, Kharagpur, in Computer Science, and after that, following a hallowed and well‑worn path, I came to the US for MS and PhD at the University of Illinois at Urbana‑Champaign. Four short years later, I added a "Dr." to my name and was out into the bright lights of industry, starting work at the IBM T. J. Watson Research Center in New York.</p>
 
           <p class="pull">A decade and a half later, I am still idealistic, still wonder‑struck that a profession can be so rewarding.</p>
 
-          <p>A few years of learning from — and then working together with — some of the greats of computer science at IBM, the academic bug bit me, and I headed back to the mid‑west to become an idealistic Assistant Professor at Purdue University. A decade and a half later, I am still idealistic, still wonder‑struck that a profession can be so rewarding as I teach the next generation of scientists and engineers, do research with the best and the brightest, and learn so much in the process. One scenic detour has been a successful startup I did with three colleagues, SensorHound Innovations, on embedded system reliability. Currently at Purdue, I lead the National Science Foundation center CHORUS (2024–current) on resilient cyber‑physical systems, and the Army's Artificial Intelligence Innovation Institute (A2I2) (2020–current) on assured autonomous operations.</p>
+          <p>A few years of learning from, and then working together with, some of the greats of computer science at IBM, the academic bug bit me, and I headed back to the mid‑west to become an idealistic Assistant Professor at Purdue University. One scenic detour along the way has been a successful startup I did with three colleagues, SensorHound Innovations, on embedded system reliability. Currently at Purdue, I lead the National Science Foundation center CHORUS (2024–current) on resilient cyber‑physical systems, and the Army's Artificial Intelligence Innovation Institute (A2I2) (2020–current) on assured autonomous operations.</p>
 
-          <p>Our technical community has been generous with awards, acknowledging our technical and societal contributions. Our work has received 13 best paper or runner‑up for best paper awards, and two Test‑of‑Time awards (DSN 2022; Middleware 2025). I am a nominated member of the International Federation for Information Processing (IFIP), a Fellow of the Institute of Engineering and Technology (IET) (2022) and of the Asia Pacific Artificial Intelligence Association (AAIA) (2025), and recipient of the Humboldt Award (2018).</p>
+          <p>Our technical community has been generous with awards, acknowledging our technical and societal contributions. Our work has received 13 best paper or runner‑up for best paper awards, and two Test‑of‑Time awards (DSN 2022; Middleware 2025). I am a nominated member of the International Federation for Information Processing (IFIP), a Fellow of the Institute of Engineering and Technology (2022) and of the Asia Pacific Artificial Intelligence Association (2025), and a recipient of the Humboldt Award (2018).</p>
 
-          <div class="credentials">
-            <span>IET Fellow · 2022</span>
-            <span>AAIA Fellow · 2025</span>
-            <span>Humboldt Award · 2018</span>
-            <span>IFIP Nominated Member</span>
-            <span>13 best paper / runner-up awards</span>
-            <span>2 Test-of-Time awards</span>
-          </div>
-
-          <p>On a personal level, I maintain strong connections to India, serving as International Visiting Faculty at IIT Kharagpur and IIT Bombay. I have been a 20+ year volunteer with Asha for Education, a non‑profit that has been supporting basic education for underprivileged children in India since 1991. I love to play tennis — surface no matter — and for those snowy days in the Midwest, pickleball would do equally well. My wife is also a Professor at Purdue, and she has kept me sane (to some extent), on my toes (especially when she zips past me during our bike rides), energetic (whenever I feel like lolling too much, she lets me know), and fun (no professorial airs, please).</p>
+          <p>On a personal level, I maintain strong connections to India, serving as International Visiting Faculty at IIT Kharagpur and IIT Bombay. I have been a 20+ year volunteer with Asha for Education, a non‑profit that has been supporting basic education for underprivileged children in India since 1991. I love to play tennis, surface no matter, and for those snowy days in the Midwest, pickleball would do equally well. My wife is also a Professor at Purdue, and she has kept me sane (to some extent), on my toes (especially when she zips past me during our bike rides), energetic, and fun, no professorial airs, please.</p>
 
           <div class="whiteboard-aside">
             <img src="images/IEEE26/whiteboard-0726.jpg" alt="Saurabh Bagchi sketching a multimodal classification pipeline on a whiteboard">
-            <p class="cap">Same habit in every room I'm in — from the classroom to the boardroom: sketch it out, then build it.</p>
+            <p class="cap">Same habit in every room I'm in, from the classroom to the boardroom: sketch it out, then build it.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- ---------- VISION ---------- -->
-    <section class="block" id="vision">
-      <div class="block-head">
-        <p class="block-eyebrow">02 — Platform</p>
-        <h2>My vision and plans for our technical community</h2>
-      </div>
-      <div class="block-body">
-        <div class="rail"></div>
+<!-- ---------- VISION ---------- -->
+<section class="block" id="vision">
+  <div class="wrap">
+    <div class="rail-layout">
+      <div class="rail"><div class="via"><span class="pulse"></span></div><div class="trace-line"></div></div>
+      <div>
+        <div class="block-head">
+          <p class="block-eyebrow">02 · Platform</p>
+          <h2>My vision and plans for our technical community</h2>
+        </div>
         <div class="content">
-          <p>IEEE Computer Society stands at an inflection point — poised not just to disseminate technical knowledge, but to be a beacon showing our community the path forward. My two terms on the CS Board of Governors, along with my current leadership of two Society‑wide programs — CS Juniors and the Global Student Challenge — have prepared me to lead CS toward a future in which we shape computing technology as a powerful force for serving humanity.</p>
-
-          <div class="pillars">
-            <div class="pillar">
-              <div class="pillar-mark">I.</div>
-              <div>
-                <h3>Academia–industry–government collaboration</h3>
-                <p>While on the Board of Governors, I led a successful effort to make CS the locus for academia‑industry‑government collaboration. CS is uniquely positioned to catalyze this, but too often we've missed the calling. I will change this through focused programs: joint ventures in roadmapping technology sectors; standards development to ensure interoperability and security; joint prototype creation; and student challenge competitions that build effective talent pipelines.</p>
-              </div>
-            </div>
-            <div class="pillar">
-              <div class="pillar-mark">II.</div>
-              <div>
-                <h3>Elevate Society members</h3>
-                <p>CS must proactively nurture students and young professionals (SYP) to become leaders. Currently leading CS Juniors and the Global Student Challenge, I have a deep appreciation for the role of SYP. I will streamline our operations and create clear pathways for our global members — far beyond our boardrooms — to contribute to, and then lead, important programs.</p>
-              </div>
-            </div>
-            <div class="pillar">
-              <div class="pillar-mark">III.</div>
-              <div>
-                <h3>An independent voice in technology policy</h3>
-                <p>I will energize IEEE CS to become a more trusted independent voice in technology matters. Policymakers struggle to keep pace with technological change, leaving them reliant on biased lobbyists. We will create standing, rapid‑response task forces of domain experts who can translate complex research into accessible policy briefs, and train our members to amplify their impact through path‑defining contributions and greater cooperation with other societies (ACM, IFIP), policymakers, and standards bodies (NIST, IETF, ISO).</p>
-              </div>
-            </div>
-            <div class="pillar">
-              <div class="pillar-mark">IV.</div>
-              <div>
-                <h3>Efficient operation</h3>
-                <p>I will make CS agile and cost‑efficient in initiating and sustaining activities worldwide — leading through local, member‑driven events that tap into the vast passion of our members to contribute, given the proper support and recognition. Throughout, I will make these events broadly accessible across financial and geographical lines.</p>
-              </div>
-            </div>
-          </div>
-
-          <p style="margin-top:32px;">This moment of opportunity excites me. Drawing on my leadership experience across IEEE, ACM, and IFIP, as well as my passion and discipline, I am committed to making the Society a deeply rewarding professional home for its members and a powerful, enduring force for good in the broader world.</p>
+          <p>IEEE Computer Society stands at an inflection point, poised not just to disseminate technical knowledge, but to be a beacon showing our community the path forward. My two terms on the CS Board of Governors, along with my current leadership of two Society‑wide programs, CS Juniors and the Global Student Challenge, have prepared me to lead CS toward a future in which we shape computing technology as a powerful force for serving humanity.</p>
         </div>
-      </div>
-    </section>
 
-    <!-- ---------- TRACK RECORD ---------- -->
-    <section class="block" id="record">
-      <div class="block-head">
-        <p class="block-eyebrow">03 — Record</p>
-        <h2>What have I done so far?</h2>
-      </div>
-      <div class="block-body">
-        <div class="rail"></div>
-        <div class="content" style="max-width:none;">
-          <div class="record-list">
-            <div class="record-item">
-              <div class="record-date">2021 — current</div>
-              <div>
-                <h3>Chair, Computer Society Student Challenge Competition</h3>
-                <p>The challenge competitions give students a platform to build innovative solutions to real‑world problems, using real‑world datasets from academic and industry teams. They alternate between the global student community and the North America‑based community. The last Global Student Competition drew 500 registered students; the last North America Competition (2024) drew 43 teams. Each was financially sponsored by IEEE CS and private industry, organized with two other Board member colleagues (Prof. Deborah Silver and Prof. Joaquim Jorge), with the final held in person at an IEEE CS conference.</p>
-              </div>
-            </div>
-
-            <div class="record-item">
-              <div class="record-date">2024 — 2026</div>
-              <div>
-                <h3>Chair (2026), Co‑Chair (2025), Member (2024) — IEEE CS Juniors Program</h3>
-                <p>A global program, started in 2024, meant to inspire K‑12 students to explore and excel in computing activities — sparking curiosity in computer science and building lasting relationships with students, educators, and communities. As (Co‑)Chair, my responsibilities have included defining the rubric for project selection, disseminating program information widely to attract deserving proposals, coordinating proposal evaluation, and advising organizers on successful event execution.</p>
-              </div>
-            </div>
-
-            <div class="record-item">
-              <div class="record-date">2017–20, 2022–24</div>
-              <div>
-                <h3>Computer Society Board of Governors Member</h3>
-                <p>I took on various participatory and leadership roles during my stints on the board, focused on two overarching goals — energizing students and young professionals, and creating synergies between academic and industry professionals. Specific roles included leading student activities within the Geographical Activities Committee (GAC), IEEE CS representative to the IEEE Biometrics Council, Charter Member of the CS Distinguished Contributor Recognition Program, and member of the Ad‑Hoc Committee on ideation of novel CS activities.</p>
-              </div>
-            </div>
-
-            <div class="record-item">
-              <div class="record-date">2021 — 2024</div>
-              <div>
-                <h3>Distinguished Visitor, IEEE Computer Society</h3>
-                <p>Selected as a Distinguished Visitor, I gave 6 talks — including two keynotes — at campuses (IISc Bangalore, University of Lisbon, University of Glasgow, and others) and CS conferences (keynotes at ISSRE, InC4). Topics included "Turning Padawans to Jedi Knights: Best practices for training our computing students," "How to have a Terrific or a Terrible Life During Your First Three Years as Faculty," and "Dependability and Data Analytics: A Match Made in the Cloud."</p>
-              </div>
-            </div>
-
-            <div class="record-item">
-              <div class="record-date">8× in 10 years</div>
-              <div>
-                <h3>Steering Committee &amp; Organizing Committee, TCFTC and DSN Conference</h3>
-                <p>A core member of the IEEE CS Technical Community on Dependable Computing and Fault Tolerance (TCFTC), I have served on the Organizing Committee of its primary conference, Dependable Systems and Networks (DSN), 8 times in the last 10 years — including as Founder of the Rising Star Award (2020), Workshop Chair (2021, 2025), Steering Committee (2018–19), and PC Chair (2011).</p>
-              </div>
-            </div>
+        <div class="pillars">
+          <div class="pillar">
+            <span class="mark">I.</span>
+            <h3>Academia–industry–government collaboration</h3>
+            <p>I will make CS the natural locus for collaboration: through joint roadmapping of technology sectors, standards development for interoperability and security, joint prototype creation, and student challenge competitions that build real talent pipelines.</p>
+          </div>
+          <div class="pillar">
+            <span class="mark">II.</span>
+            <h3>Elevate Society members</h3>
+            <p>CS must proactively nurture students and young professionals into leaders. I will streamline our operations and create clear pathways for global members, far beyond our boardrooms, to contribute to, and then lead, important programs.</p>
+          </div>
+          <div class="pillar">
+            <span class="mark">III.</span>
+            <h3>Independent voice in technology policy</h3>
+            <p>I will build standing, rapid‑response task forces of domain experts who translate complex research into accessible policy briefs, and train members to amplify their impact with policymakers and standards bodies (NIST, IETF, ISO).</p>
+          </div>
+          <div class="pillar">
+            <span class="mark">IV.</span>
+            <h3>Efficient operation</h3>
+            <p>I will lead through local, member‑driven events that tap into the passion of our members, given proper support and recognition, and keep them broadly accessible across financial and geographical lines.</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ---------- FEEDBACK ---------- -->
-    <section class="block" id="feedback" style="border-bottom:none;">
-      <div class="block-head">
-        <p class="block-eyebrow">04 — Your turn</p>
-        <h2>Tell me something</h2>
+        <div class="content" style="margin-top:28px;">
+          <p>This moment of opportunity excites me. Drawing on my leadership experience across IEEE, ACM, and IFIP, as well as my passion and discipline, I am committed to making the Society a deeply rewarding professional home for its members and a powerful, enduring force for good in the broader world.</p>
+        </div>
       </div>
-      <div class="block-body">
-        <div class="rail"></div>
-        <div class="content" style="max-width:none;">
-          <div class="feedback-grid">
-            <form id="feedback-form">
+    </div>
+  </div>
+</section>
+
+<!-- ---------- TRACK RECORD ---------- -->
+<section class="block" id="record">
+  <div class="wrap">
+    <div class="rail-layout">
+      <div class="rail"><div class="via"><span class="pulse"></span></div><div class="trace-line"></div></div>
+      <div>
+        <div class="block-head">
+          <p class="block-eyebrow">03 · Record</p>
+          <h2>What have I done so far?</h2>
+        </div>
+
+        <div class="record-item">
+          <div class="record-date">2021–current</div>
+          <h3>Chair, Computer Society Student Challenge Competition</h3>
+          <p>A platform for students to build innovative solutions to real‑world problems, alternating between the global and North America‑based communities. The last Global Student Competition drew 500 students; North America 2024 drew 43 teams. Organized with Prof. Deborah Silver and Prof. Joaquim Jorge, sponsored by IEEE CS and industry, with the final held at an IEEE CS conference.</p>
+        </div>
+        <div class="record-item">
+          <div class="record-date">2024–2026</div>
+          <h3>Chair (2026), Co‑Chair (2025), Member (2024): IEEE CS Juniors Program</h3>
+          <p>A global program, started in 2024, inspiring K‑12 students to explore and excel in computing. As (Co‑)Chair: defining the rubric for project selection, disseminating program information, coordinating proposal evaluation, and advising organizers on execution.</p>
+        </div>
+        <div class="record-item">
+          <div class="record-date">2017–20, 2022–24</div>
+          <h3>Computer Society Board of Governors Member</h3>
+          <p>Leading student activities within the Geographical Activities Committee (GAC), IEEE CS representative to the IEEE Biometrics Council, Charter Member of the CS Distinguished Contributor Recognition Program, and member of the Ad‑Hoc Committee on ideation of novel CS activities.</p>
+        </div>
+        <div class="record-item">
+          <div class="record-date">2021–2024</div>
+          <h3>Distinguished Visitor, IEEE Computer Society</h3>
+          <p>Six talks, including two keynotes, at campuses (IISc Bangalore, University of Lisbon, University of Glasgow) and CS conferences (keynotes at ISSRE, InC4), on topics from training computing students to dependability and data analytics.</p>
+        </div>
+        <div class="record-item" style="border-bottom:none;">
+          <div class="record-date">8× in 10 years</div>
+          <h3>Steering Committee &amp; Organizing Committee, TCFTC and DSN Conference</h3>
+          <p>Core member of the IEEE CS Technical Community on Dependable Computing and Fault Tolerance: Founder of the Rising Star Award (2020), Workshop Chair (2021, 2025), Steering Committee (2018–19), and PC Chair (2011).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- FEEDBACK ---------- -->
+<section class="block" id="feedback">
+  <div class="wrap">
+    <div class="rail-layout">
+      <div class="rail"><div class="via"><span class="pulse"></span></div></div>
+      <div>
+        <div class="block-head">
+          <p class="block-eyebrow">04 · Your turn</p>
+          <h2>Tell me something</h2>
+        </div>
+
+        <div class="feedback-grid">
+          <form id="feedback-form">
+            <div class="field">
+              <label for="fb-message">Your thoughts, ideas, or feedback</label>
+              <textarea id="fb-message" name="message" placeholder="What would make our Society better? Any ideas for programs, or interest in volunteering?" required></textarea>
+            </div>
+            <div class="two-col">
               <div class="field">
-                <label for="fb-message">Your thoughts, ideas, or feedback</label>
-                <textarea id="fb-message" name="message" placeholder="What would make our Society better? Any ideas for programs, or interest in volunteering?" required></textarea>
+                <label for="fb-name">Name (optional)</label>
+                <input type="text" id="fb-name" name="name" placeholder="Jane Doe">
               </div>
-              <div class="two-col">
-                <div class="field">
-                  <label for="fb-name">Name (optional)</label>
-                  <input type="text" id="fb-name" name="name" placeholder="Jane Doe">
-                </div>
-                <div class="field">
-                  <label for="fb-email">Email (optional)</label>
-                  <input type="email" id="fb-email" name="email" placeholder="jane@example.com">
-                </div>
+              <div class="field">
+                <label for="fb-email">Email (optional)</label>
+                <input type="email" id="fb-email" name="email" placeholder="jane@example.com">
               </div>
-              <div class="captcha-box">[ captcha widget goes here ]</div>
-              <button type="submit" class="btn btn-primary" style="border:none;cursor:pointer;">Send</button>
-            </form>
-
-            <aside class="feedback-side">
-              <h4>Why I'm asking</h4>
-              <p>This space is for you to tell me something about what you've read here, any ideas you have for making our technical community better, and any interest in volunteering for our Computer Society.</p>
-              <p>I read every note personally.</p>
-            </aside>
-          </div>
+            </div>
+            <div class="captcha-box">[ captcha widget goes here ]</div>
+            <button type="submit" class="btn btn-solid submit-btn">Send</button>
+          </form>
+          <aside class="feedback-side">
+            <h4>Why I'm asking</h4>
+            <p>This space is for you to tell me something about what you've read here, any ideas you have for making our technical community better, and any interest in volunteering for our Computer Society.</p>
+            <p>I read every note personally.</p>
+          </aside>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <footer>
-      <p class="disclaimer">The opinions on this page are mine and are not necessarily those of the IEEE Computer Society or the IEEE.</p>
-    </footer>
+<footer>
+  <div class="wrap">
+    <p>The opinions on this page are mine and are not necessarily those of the IEEE Computer Society or the IEEE.</p>
+  </div>
+</footer>
 
-  </main>
-</div>
-
-<!-- lightbox -->
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightbox-close">Close ✕</button>
   <img id="lightbox-img" src="" alt="">
 </div>
 
 <script>
-  // ---- scroll spy for sidebar nav ----
-  const navLinks = document.querySelectorAll('#side-nav a');
-  const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href')));
-  function onScroll(){
-    let idx = 0;
-    const y = window.scrollY + 140;
-    sections.forEach((s,i) => { if(s && s.offsetTop <= y) idx = i; });
-    navLinks.forEach(a => a.classList.remove('active'));
-    if(navLinks[idx]) navLinks[idx].classList.add('active');
-  }
-  window.addEventListener('scroll', onScroll);
-  onScroll();
-
-  // ---- carousel ----
-  const track = document.getElementById('car-track');
-  const slides = track.children.length;
-  let current = 0;
+  // ---- carousel (crossfade) ----
+  const imgs = document.querySelectorAll('.car-img-wrap [data-slide]');
+  const total = imgs.length;
+  let curr = 0;
+  const captions = [
+    "At the IEEE CS North America Student Challenge Competition 2024 in Washington DC with the finalists and co‑organizers/judges Deborah, Eric, and Haoliang.",
+    "Sometimes I (almost) win one on the courts: here with the runner‑up award at the professors‑vs‑students pickleball tournament at Purdue, 2025.",
+    "Something I love: teaching and learning. Here with my large sophomore class, in December 2025.",
+    "With my group in the NSF Center CHORUS, June 2026.",
+    "Participating in the Computer Society Awards Ceremony, 2019."
+  ];
+  const capNum = document.getElementById('cap-num');
+  const capText = document.getElementById('cap-text');
   const dotsWrap = document.getElementById('car-dots');
-  for(let i=0;i<slides;i++){
+  for(let i=0;i<total;i++){
     const d = document.createElement('button');
     d.className = 'car-dot' + (i===0?' active':'');
     d.setAttribute('aria-label','Go to photo '+(i+1));
@@ -1008,25 +485,19 @@
   }
   const dots = dotsWrap.children;
   function goTo(i){
-    current = (i+slides)%slides;
-    track.style.transform = `translateX(-${current * track.offsetWidth}px)`;
-    Array.from(dots).forEach((d,j)=>d.classList.toggle('active', j===current));
+    curr = (i+total)%total;
+    imgs.forEach(el=>el.classList.toggle('active', Number(el.dataset.slide)===curr));
+    Array.from(dots).forEach((d,j)=>d.classList.toggle('active', j===curr));
+    capNum.textContent = String(curr+1).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
+    capText.textContent = captions[curr];
   }
-  window.addEventListener('resize', ()=>goTo(current));
-  document.querySelector('.car-prev').addEventListener('click', ()=>{resetTimer();goTo(current-1);});
-  document.querySelector('.car-next').addEventListener('click', ()=>{resetTimer();goTo(current+1);});
-
-  // auto-advance every 5 seconds; pause on hover
-  let timer = setInterval(()=>goTo(current+1), 5000);
-  function resetTimer(){ clearInterval(timer); timer = setInterval(()=>goTo(current+1), 5000); }
-  const carouselEl = document.querySelector('.carousel');
-  carouselEl.addEventListener('mouseenter', ()=>clearInterval(timer));
-  carouselEl.addEventListener('mouseleave', ()=>resetTimer());
+  document.querySelector('.car-prev').addEventListener('click', ()=>goTo(curr-1));
+  document.querySelector('.car-next').addEventListener('click', ()=>goTo(curr+1));
 
   // ---- lightbox ----
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
-  document.querySelectorAll('.car-img-wrap[data-full]').forEach(el=>{
+  document.querySelectorAll('.car-img-wrap img[data-full]').forEach(el=>{
     el.addEventListener('click', ()=>{
       lightboxImg.src = el.getAttribute('data-full');
       lightbox.classList.add('open');
@@ -1036,10 +507,10 @@
   lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) lightbox.classList.remove('open'); });
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') lightbox.classList.remove('open'); });
 
-  // ---- feedback form (placeholder submit — wire up to real captcha/backend before launch) ----
+  // ---- feedback form (placeholder submit, wire up to real captcha/backend before launch) ----
   document.getElementById('feedback-form').addEventListener('submit', function(e){
     e.preventDefault();
-    alert('Thanks — this form is a draft. Wire this up to your captcha + mail/form backend before publishing.');
+    alert('Thanks! This form is a draft. Wire this up to your captcha + mail/form backend before publishing.');
   });
 </script>
 
