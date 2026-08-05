@@ -326,10 +326,12 @@
   }
   .car-track{
     display:flex;
+    flex-wrap:nowrap;
     transition:transform .45s cubic-bezier(.65,0,.35,1);
   }
   .car-slide{
-    min-width:100%;
+    flex:0 0 100%;
+    min-width:0;
     display:grid;
     grid-template-columns:1.5fr 1fr;
   }
@@ -1007,9 +1009,10 @@
   const dots = dotsWrap.children;
   function goTo(i){
     current = (i+slides)%slides;
-    track.style.transform = `translateX(-${current*100}%)`;
+    track.style.transform = `translateX(-${current * track.offsetWidth}px)`;
     Array.from(dots).forEach((d,j)=>d.classList.toggle('active', j===current));
   }
+  window.addEventListener('resize', ()=>goTo(current));
   document.querySelector('.car-prev').addEventListener('click', ()=>{resetTimer();goTo(current-1);});
   document.querySelector('.car-next').addEventListener('click', ()=>{resetTimer();goTo(current+1);});
 
