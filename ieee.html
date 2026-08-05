@@ -103,17 +103,8 @@
   .credentials{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px;}
   .chip{font-family:var(--mono);font-size:.72rem;padding:6px 11px;border:1px solid var(--line);border-radius:3px;color:var(--slate);background:var(--card);}
 
-  /* election timeline */
-  .timeline{margin-top:46px;border:1px solid var(--line);background:var(--card);padding:20px 26px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
-  .timeline .lbl{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;color:var(--slate-light);}
-  .timeline .track{flex:1;min-width:160px;height:1px;background:var(--line);position:relative;}
-  .timeline .track::before,.timeline .track::after{content:"";position:absolute;top:50%;width:7px;height:7px;border-radius:50%;transform:translate(-50%,-50%);}
-  .timeline .track::before{left:0;background:var(--trace);}
-  .timeline .track::after{right:0;background:var(--gold);left:auto;transform:translate(50%,-50%);}
-  .timeline .dates{display:flex;gap:20px;font-family:var(--mono);font-size:.76rem;color:var(--ink);}
 
   /* ---------- carousel ---------- */
-  .carousel-section{padding:56px 0;}
   .carousel{position:relative;border:1px solid var(--line);background:var(--card);overflow:hidden;}
   .car-stage{position:relative;display:grid;grid-template-columns:1.5fr 1fr;min-height:400px;}
   @media (max-width:720px){.car-stage{grid-template-columns:1fr;min-height:auto;}}
@@ -259,17 +250,7 @@
       </div>
     </div>
 
-    <div class="timeline fade-up d3">
-      <span class="lbl">Election</span>
-      <div class="track"></div>
-      <div class="dates"><span>Opens Fri, Aug 14</span><span>Closes Fri, Sep 18 · 12:00 PM ET</span></div>
-    </div>
-  </div>
-</header>
-
-<section class="carousel-section">
-  <div class="wrap">
-    <div class="carousel">
+    <div class="carousel fade-up d3" style="margin-top:46px;">
       <div class="car-stage" id="car-stage">
         <div class="car-img-wrap">
           <img class="active" data-slide="0" src="images/IEEE26/dc-student-challenge-2024.png" alt="Saurabh Bagchi with finalists and judges at the IEEE CS North America Student Challenge Competition 2024 in Washington DC" data-full="images/IEEE26/dc-student-challenge-2024.png">
@@ -288,7 +269,8 @@
       <div class="car-dots" id="car-dots"></div>
     </div>
   </div>
-</section>
+</header>
+
 
 <!-- ---------- WHO AM I ---------- -->
 <section class="block" id="who">
