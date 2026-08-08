@@ -205,7 +205,7 @@
   footer{padding:36px 0 56px;}
   footer p{color:var(--slate-light);font-size:.8rem;font-style:italic;border-top:1px solid var(--line);padding-top:22px;}
 </style>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
 
@@ -431,10 +431,10 @@
                 <input type="email" id="fb-email" name="email" placeholder="jane@example.com">
               </div>
             </div>
-            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="access_key" value="3e8d091e-489f-4b93-b52f-65024a3ebf33">
             <input type="hidden" name="subject" value="IEEE CS Campaign — Feedback">
             <input type="hidden" name="redirect" value="">
-            <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="auto"></div>
+            <div class="h-captcha" data-sitekey="c692074a-2ad0-4b8a-9d26-83ea6e4090de" data-theme="auto"></div>
             <button type="submit" class="btn btn-solid submit-btn">Send</button>
           </form>
           <aside class="feedback-side">
@@ -507,7 +507,7 @@
 
   // ---- feedback form ----
   document.getElementById('feedback-form').addEventListener('submit', function(e){
-    const token = document.querySelector('[name="cf-turnstile-response"]');
+    const token = document.querySelector('[name="h-captcha-response"]');
     if (!token || !token.value) {
       e.preventDefault();
       alert('Please complete the captcha.');
