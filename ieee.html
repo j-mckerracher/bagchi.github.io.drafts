@@ -195,7 +195,7 @@
   .field textarea:focus,.field input:focus{outline:none;border-color:var(--trace);box-shadow:0 0 0 3px var(--trace-soft);}
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   @media (max-width:460px){.two-col{grid-template-columns:1fr;}}
-  .captcha-box{border:1px dashed var(--line);padding:13px;font-family:var(--mono);font-size:.72rem;color:var(--slate-light);text-align:center;margin:6px 0 18px;}
+  .captcha-box{margin:6px 0 18px;}
   .submit-btn{border:none;cursor:pointer;}
   .feedback-side{border-left:1px solid var(--line);padding-left:28px;}
   @media (max-width:820px){.feedback-side{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:22px;}}
@@ -205,6 +205,7 @@
   footer{padding:36px 0 56px;}
   footer p{color:var(--slate-light);font-size:.8rem;font-style:italic;border-top:1px solid var(--line);padding-top:22px;}
 </style>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -415,7 +416,7 @@
         </div>
 
         <div class="feedback-grid">
-          <form id="feedback-form">
+          <form id="feedback-form" action="https://api.web3forms.com/submit" method="POST">
             <div class="field">
               <label for="fb-message">Your thoughts, ideas, or feedback</label>
               <textarea id="fb-message" name="message" placeholder="What would make our Society better? Any ideas for programs, or interest in volunteering?" required></textarea>
@@ -430,7 +431,10 @@
                 <input type="email" id="fb-email" name="email" placeholder="jane@example.com">
               </div>
             </div>
-            <div class="captcha-box">[ captcha widget goes here ]</div>
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="IEEE CS Campaign — Feedback">
+            <input type="hidden" name="redirect" value="">
+            <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="auto"></div>
             <button type="submit" class="btn btn-solid submit-btn">Send</button>
           </form>
           <aside class="feedback-side">
@@ -501,10 +505,14 @@
   lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) lightbox.classList.remove('open'); });
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') lightbox.classList.remove('open'); });
 
-  // ---- feedback form (placeholder submit, wire up to real captcha/backend before launch) ----
+  // ---- feedback form ----
   document.getElementById('feedback-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    alert('Thanks! This form is a draft. Wire this up to your captcha + mail/form backend before publishing.');
+    const token = document.querySelector('[name="cf-turnstile-response"]');
+    if (!token || !token.value) {
+      e.preventDefault();
+      alert('Please complete the captcha.');
+    }
+    // Turnstile token present — let form POST to Web3Forms naturally
   });
 </script>
 
