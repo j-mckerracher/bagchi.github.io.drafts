@@ -505,13 +505,36 @@
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') lightbox.classList.remove('open'); });
 
   // ---- feedback form ----
-  document.getElementById('feedback-form').addEventListener('submit', function(e){
+  document.getElementById('feedback-form').addEventListener('submit', async function(e){
+    e.preventDefault();
     const token = document.querySelector('[name="h-captcha-response"]');
     if (!token || !token.value) {
-      e.preventDefault();
       alert('Please complete the captcha.');
+      return;
     }
-    // Turnstile token present — let form POST to Web3Forms naturally
+    const btn = this.querySelector('.submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    const data = Object.fromEntries(new FormData(this));
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        body: JSON.stringify(data)
+      });
+      const json = await res.json();
+      if (json.success) {
+        this.innerHTML = '<p style="font-size:1.1rem;padding:2rem 0;">Thank you — your message was received!</p>';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send';
+        alert('Submission failed: ' + (json.message || 'Unknown error'));
+      }
+    } catch(err) {
+      btn.disabled = false;
+      btn.textContent = 'Send';
+      alert('Network error — please try again.');
+    }
   });
 </script>
 
