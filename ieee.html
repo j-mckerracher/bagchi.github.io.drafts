@@ -515,7 +515,11 @@
     const btn = this.querySelector('.submit-btn');
     btn.disabled = true;
     btn.textContent = 'Sending…';
-    const data = Object.fromEntries(new FormData(this));
+    const raw = new FormData(this);
+    const data = {};
+    for (const [k, v] of raw) {
+      if (k !== 'h-captcha-response' && k !== 'g-recaptcha-response') data[k] = v;
+    }
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
