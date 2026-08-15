@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Endorse Saurabh Bagchi for IEEE Computer Society President, 2026</title>
-<meta name="description" content="Submit an endorsement for Saurabh Bagchi's campaign for IEEE Computer Society President, 2026.">
+<title>Share a Testimonial for Saurabh Bagchi — IEEE Computer Society President, 2026</title>
+<meta name="description" content="Submit a testimonial for Saurabh Bagchi's campaign for IEEE Computer Society President, 2026.">
 
 <style>
   :root{
@@ -110,50 +110,50 @@
 <header class="page-head">
   <div class="wrap">
     <p class="kicker">IEEE Computer Society Election · 2026</p>
-    <h1>Add your <em>endorsement</em></h1>
+    <h1>Share a <em>testimonial</em></h1>
     <p class="lede">If you'd like to publicly support Saurabh Bagchi's candidacy for IEEE Computer Society President, share a few sentences below. With your permission, your name, title, and words may be featured on the campaign page.</p>
   </div>
 </header>
 
 <section class="block">
   <div class="wrap">
-    <form id="endorse-form" action="https://api.web3forms.com/submit" method="POST">
+    <form id="testimonial-form" action="https://api.web3forms.com/submit" method="POST">
       <div class="two-col">
         <div class="field">
-          <label for="en-name">Full name</label>
-          <input type="text" id="en-name" name="name" placeholder="Jane Doe" required>
+          <label for="tm-name">Full name</label>
+          <input type="text" id="tm-name" name="name" placeholder="Jane Doe" required>
         </div>
         <div class="field">
-          <label for="en-title">Title / affiliation</label>
-          <input type="text" id="en-title" name="title" placeholder="Professor, IEEE CS Board of Governors" required>
+          <label for="tm-title">Title / affiliation</label>
+          <input type="text" id="tm-title" name="title" placeholder="Professor, IEEE CS Board of Governors" required>
         </div>
       </div>
 
       <div class="field">
-        <label for="en-email">Email</label>
-        <input type="email" id="en-email" name="email" placeholder="jane@example.com" required>
-        <span class="hint">Used to confirm the endorsement with you — never published.</span>
+        <label for="tm-email">Email</label>
+        <input type="email" id="tm-email" name="email" placeholder="jane@example.com" required>
+        <span class="hint">Used to confirm the testimonial with you — never published.</span>
       </div>
 
       <div class="field">
-        <label for="en-relationship">How do you know Saurabh? <span style="text-transform:none;font-weight:400;">(optional)</span></label>
-        <input type="text" id="en-relationship" name="relationship" placeholder="e.g. Fellow Board of Governors member, colleague at Purdue, former student">
+        <label for="tm-relationship">How do you know Saurabh? <span style="text-transform:none;font-weight:400;">(optional)</span></label>
+        <input type="text" id="tm-relationship" name="relationship" placeholder="e.g. Fellow Board of Governors member, colleague at Purdue, former student">
       </div>
 
       <div class="field">
-        <label for="en-message">Your endorsement</label>
-        <textarea id="en-message" name="message" placeholder="Why are you endorsing Saurabh for IEEE Computer Society President?" required></textarea>
+        <label for="tm-message">Your testimonial</label>
+        <textarea id="tm-message" name="message" placeholder="Why are you supporting Saurabh for IEEE Computer Society President?" required></textarea>
       </div>
 
       <div class="consent">
-        <input type="checkbox" id="en-consent" name="consent" value="Yes, may publish" required>
-        <label for="en-consent">I agree that my name, title, and the endorsement text above may be published on Saurabh's campaign page and related materials.</label>
+        <input type="checkbox" id="tm-consent" name="consent" value="Yes, may publish" required>
+        <label for="tm-consent">I agree that my name, title, and the testimonial text above may be published on Saurabh's campaign page and related materials.</label>
       </div>
 
       <input type="hidden" name="access_key" value="3e8d091e-489f-4b93-b52f-65024a3ebf33">
-      <input type="hidden" name="subject" value="IEEE CS Campaign — New Endorsement">
+      <input type="hidden" name="subject" value="IEEE CS Campaign — New Testimonial">
       <div class="h-captcha" data-sitekey="7a92ff56-b634-4bc8-93d0-25a8610e3856" data-theme="auto"></div>
-      <button type="submit" class="btn btn-solid submit-btn">Submit endorsement</button>
+      <button type="submit" class="btn btn-solid submit-btn">Submit testimonial</button>
     </form>
   </div>
 </section>
@@ -165,7 +165,7 @@
 </footer>
 
 <script>
-  document.getElementById('endorse-form').addEventListener('submit', async function(e){
+  document.getElementById('testimonial-form').addEventListener('submit', async function(e){
     e.preventDefault();
     const token = document.querySelector('[name="h-captcha-response"]');
     if (!token || !token.value) {
@@ -188,15 +188,15 @@
       });
       const json = await res.json();
       if (json.success) {
-        this.innerHTML = '<p style="font-size:1.1rem;padding:2rem 0;">Thank you — your endorsement was received!</p>';
+        this.innerHTML = '<p style="font-size:1.1rem;padding:2rem 0;">Thank you — your testimonial was received!</p>';
       } else {
         btn.disabled = false;
-        btn.textContent = 'Submit endorsement';
+        btn.textContent = 'Submit testimonial';
         alert('Submission failed: ' + (json.message || 'Unknown error'));
       }
     } catch(err) {
       btn.disabled = false;
-      btn.textContent = 'Submit endorsement';
+      btn.textContent = 'Submit testimonial';
       alert('Network error — please try again.');
     }
   });
