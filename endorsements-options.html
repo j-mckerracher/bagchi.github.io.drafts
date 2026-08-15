@@ -1,0 +1,200 @@
+<title>Endorsement Layout Options</title>
+<style>
+  :root{
+    --ink:#1C2321;
+    --trace:#1F5C4E;
+    --trace-soft:#E7EFEC;
+    --gold:#C98A2B;
+    --gold-soft:#F3E6D2;
+    --paper:#F6F5F0;
+    --card:#FFFFFF;
+    --slate:#565F5C;
+    --slate-light:#8B948F;
+    --line:#E1DFD6;
+    --display:'Newsreader',Georgia,serif;
+    --body-f:'Public Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --mono:'Space Mono',ui-monospace,Menlo,monospace;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Public+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body-f);line-height:1.65;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 44px;}
+  @media (max-width:720px){.wrap{padding:0 22px;}}
+  img{max-width:100%;display:block;}
+
+  .meta-bar{background:var(--ink);color:var(--paper);padding:28px 0;}
+  .meta-bar .wrap{max-width:980px;}
+  .meta-bar h1{font-family:var(--display);font-weight:600;font-size:1.6rem;margin:0 0 6px;}
+  .meta-bar p{font-family:var(--mono);font-size:.8rem;color:#B9C4BF;margin:0;}
+
+  .option-divider{padding:40px 0 8px;border-top:3px solid var(--gold);margin-top:56px;}
+  .option-divider:first-of-type{margin-top:0;}
+  .option-divider .tag{font-family:var(--mono);font-size:.76rem;color:var(--gold);letter-spacing:.03em;margin:0 0 6px;}
+  .option-divider h2{font-family:var(--display);font-weight:600;font-size:1.7rem;margin:0 0 10px;}
+  .option-divider p{color:var(--slate);max-width:62ch;margin:0 0 8px;font-size:.94rem;}
+  .option-verdict{font-family:var(--mono);font-size:.76rem;color:var(--slate-light);margin:0;}
+
+  .demo{border:1px solid var(--line);background:var(--card);padding:40px 36px;margin:24px 0 8px;}
+  @media (max-width:640px){.demo{padding:26px 20px;}}
+
+  /* ---- shared quote styling ---- */
+  .quote-mark{font-family:var(--display);font-size:2.4rem;color:var(--gold);line-height:1;display:block;margin-bottom:6px;}
+  .who{font-family:var(--mono);font-size:.72rem;color:var(--slate);margin-top:10px;}
+  .who strong{color:var(--ink);}
+
+  /* ===== OPTION A: dedicated section, card grid ===== */
+  .block-eyebrow{font-family:var(--mono);font-size:.74rem;color:var(--slate-light);margin:0 0 10px;}
+  .a-head h3{font-family:var(--display);font-weight:600;font-size:1.5rem;margin:0 0 26px;}
+  .endorse-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media (max-width:640px){.endorse-grid{grid-template-columns:1fr;}}
+  .endorse-card{background:var(--paper);border:1px solid var(--line);border-top:2px solid var(--trace);padding:24px 22px;}
+  .endorse-card p.text{font-family:var(--display);font-style:italic;font-size:1.02rem;line-height:1.55;margin:0;color:var(--ink);}
+
+  /* ===== OPTION B: sprinkled pull-quotes ===== */
+  .mini-section{margin-bottom:26px;}
+  .mini-section .label{font-family:var(--mono);font-size:.72rem;color:var(--slate-light);margin:0 0 8px;}
+  .mini-section .body-copy{color:var(--slate);font-size:.94rem;margin:0 0 6px;}
+  .endorse-pull{font-family:var(--display);font-style:italic;font-size:1.18rem;line-height:1.55;color:var(--ink);border-left:2px solid var(--gold);padding-left:22px;margin:20px 0;}
+  .chip-strip{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0 0;}
+  .chip{font-family:var(--mono);font-size:.72rem;padding:6px 11px;border:1px solid var(--line);border-radius:3px;color:var(--slate);background:var(--paper);}
+
+  /* ===== OPTION C: hero strip + full section ===== */
+  .endorse-strip{background:var(--trace-soft);border:1px solid var(--line);padding:16px 22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:34px;}
+  .endorse-strip .strip-label{font-family:var(--mono);font-size:.7rem;color:var(--trace);white-space:nowrap;}
+  .endorse-strip .strip-names{font-family:var(--body-f);font-size:.86rem;color:var(--ink);}
+  .endorse-strip .strip-names strong{font-weight:700;}
+  .endorse-strip .strip-more{font-family:var(--mono);font-size:.76rem;color:var(--trace);text-decoration:underline;cursor:pointer;}
+
+  .c-list{display:flex;flex-direction:column;gap:0;}
+  .c-item{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:26px 0;border-bottom:1px solid var(--line);}
+  .c-item:first-child{padding-top:0;}
+  .c-item:last-child{border-bottom:none;}
+  .c-item .initial{width:44px;height:44px;border-radius:50%;background:var(--trace);color:#fff;font-family:var(--display);font-size:1.1rem;display:flex;align-items:center;justify-content:center;}
+  .c-item p.text{font-family:var(--display);font-style:italic;font-size:1.05rem;line-height:1.55;margin:0 0 10px;color:var(--ink);}
+
+  footer{padding:50px 0 70px;}
+  footer p{color:var(--slate-light);font-size:.8rem;font-style:italic;border-top:1px solid var(--line);padding-top:22px;}
+</style>
+
+<div class="meta-bar">
+  <div class="wrap">
+    <h1>Endorsement layout — three options</h1>
+    <p>ieee.html · tokens, type, and component language reused from the live page · placeholder names marked [bracketed]</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- OPTION A -->
+  <div class="option-divider">
+    <p class="tag">Option A</p>
+    <h2>Dedicated section — "Who's behind this"</h2>
+    <p>New numbered block (05, after Record) built from the same pillar-card component already used in Vision. Reads as a discrete, skimmable credibility stop — visitors who want the social proof go looking for it; visitors who don't, aren't interrupted.</p>
+    <p class="option-verdict">Best if: endorsements are few but weighty (named colleagues, past CS Presidents) and deserve their own moment.</p>
+  </div>
+  <div class="demo">
+    <div class="a-head">
+      <p class="block-eyebrow">05 · Endorsements</p>
+      <h3>Who's behind this campaign</h3>
+    </div>
+    <div class="endorse-grid">
+      <div class="endorse-card">
+        <span class="quote-mark">&ldquo;</span>
+        <p class="text">Saurabh has the rare combination of technical depth and organizational patience CS needs right now. He shipped the Juniors program when others were still writing the proposal.</p>
+        <p class="who"><strong>[Name]</strong> — [Past IEEE CS President / Title]</p>
+      </div>
+      <div class="endorse-card">
+        <span class="quote-mark">&ldquo;</span>
+        <p class="text">I've watched him run the Student Challenge for three years. He listens to volunteers, then actually changes the plan. That's the leadership style CS's boards have needed.</p>
+        <p class="who"><strong>[Name]</strong> — [Board of Governors / Title]</p>
+      </div>
+      <div class="endorse-card">
+        <span class="quote-mark">&ldquo;</span>
+        <p class="text">A fair, transparent chair. He built a rubric everyone could see and defended it even when it was inconvenient for his own preferences.</p>
+        <p class="who"><strong>[Name]</strong> — [Title]</p>
+      </div>
+      <div class="endorse-card">
+        <span class="quote-mark">&ldquo;</span>
+        <p class="text">His industry-academia bridge work isn't theoretical — I've sat across the table from him negotiating a real standards partnership.</p>
+        <p class="who"><strong>[Name]</strong> — [Title]</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPTION B -->
+  <div class="option-divider">
+    <p class="tag">Option B</p>
+    <h2>Sprinkled — one quote per relevant section, plus a name-chip strip in the hero</h2>
+    <p>No new section. Each existing block (Who / Vision / Record) gets a single pull-quote from someone who can speak directly to that specific claim, styled with the page's existing <code>.pull</code> blockquote treatment. A compact strip of endorser chips sits in the hero, under the credentials chips.</p>
+    <p class="option-verdict">Best if: you want endorsements to reinforce specific claims ("here's proof for what I just said") rather than read as a separate testimonials wall — but it needs one good quote per section, or the gaps show.</p>
+  </div>
+  <div class="demo">
+    <div class="mini-section">
+      <p class="label">— hero, below credentials —</p>
+      <div class="chip-strip">
+        <span class="chip">Endorsed by [Name], [Title]</span>
+        <span class="chip">[Name], [Title]</span>
+        <span class="chip">[Name], [Title]</span>
+        <span class="chip">+ 4 more →</span>
+      </div>
+    </div>
+    <div class="mini-section">
+      <p class="label">— inside "Who am I", after the whiteboard aside —</p>
+      <p class="endorse-pull">&ldquo;I've known Saurabh since our IBM Research days. The idealism in that bio isn't marketing copy — it's how he actually runs a lab.&rdquo;<br><span class="who">— [Name], [Title]</span></p>
+    </div>
+    <div class="mini-section">
+      <p class="label">— inside "Vision", after pillar IV —</p>
+      <p class="endorse-pull">&ldquo;Pillar II is already happening. I was one of the volunteers his 'documented pathway' pulled in.&rdquo;<br><span class="who">— [Name], [Title]</span></p>
+    </div>
+    <div class="mini-section">
+      <p class="label">— inside "Record", after the DSN item —</p>
+      <p class="endorse-pull">&ldquo;Eight times on that organizing committee because people ask him back, not because he angles for the seat.&rdquo;<br><span class="who">— [Name], [Title]</span></p>
+    </div>
+  </div>
+
+  <!-- OPTION C -->
+  <div class="option-divider">
+    <p class="tag">Option C</p>
+    <h2>Hybrid — hero credibility strip + full endorsements section</h2>
+    <p>A thin, low-key strip of names sits right under the hero actions (skimmed by everyone, costs one line), and it deep-links to a full section further down for anyone who wants the actual quotes. Gets both jobs done: instant credibility signal at the top of the page, full-length testimony available without cluttering the fold.</p>
+    <p class="option-verdict">Best if: you're not sure yet whether endorsements are a headline feature or a supporting detail — this hedges, and it's the easiest of the three to trim back later.</p>
+  </div>
+  <div class="demo">
+    <div class="endorse-strip">
+      <span class="strip-label">ENDORSED BY</span>
+      <span class="strip-names"><strong>[Name]</strong>, [Title] · <strong>[Name]</strong>, [Title] · <strong>[Name]</strong>, [Title]</span>
+      <span class="strip-more">see all endorsements ↓</span>
+    </div>
+    <div class="a-head">
+      <p class="block-eyebrow">05 · Endorsements</p>
+      <h3>What colleagues say</h3>
+    </div>
+    <div class="c-list">
+      <div class="c-item">
+        <div class="initial">N</div>
+        <div>
+          <p class="text">Saurabh has the rare combination of technical depth and organizational patience CS needs right now.</p>
+          <p class="who"><strong>[Name]</strong> — [Title]</p>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="initial">N</div>
+        <div>
+          <p class="text">A fair, transparent chair. He built a rubric everyone could see and defended it even when inconvenient.</p>
+          <p class="who"><strong>[Name]</strong> — [Title]</p>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="initial">N</div>
+        <div>
+          <p class="text">His industry-academia bridge work isn't theoretical — I've negotiated a real standards partnership with him.</p>
+          <p class="who"><strong>[Name]</strong> — [Title]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Placeholder quotes and names only — swap in real endorsers before shipping any option. Built on branch feature/endorsements against the live ieee.html design tokens.</p>
+  </footer>
+</div>
